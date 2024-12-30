@@ -1,0 +1,12 @@
+.contact-card{
+    text-align: center;
+}
+
+.contact-item{
+    font-size: 2rem;
+}
+
+.contact-card:hover {
+    transform: scale(1.02);
+    box-shadow: 9px 6px 10px #0099bd;
+  }

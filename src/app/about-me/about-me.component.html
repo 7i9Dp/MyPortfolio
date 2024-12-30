@@ -1,0 +1,69 @@
+<!-- *************************About Section************************* -->
+<section class="about start-animation" id="about"> 
+    <!-- start-animation -->
+     <!-- this will start animation -->
+    <h2 class="title">About <span>Me</span></h2>
+    <!-- <img src="assets/Jignesh.png" alt="" class="aboutImg"> -->
+    <div class="image-container">
+        <img src="assets/Jignesh.png" alt="Jignesh" class="aboutImg">
+    </div>
+    
+    <div class="text-content2">
+        <h2>Full Stack Developer(Dot Net + Angular)</h2>
+        <p>
+            Hi, I'm Jignesh Parmar, a passionate Full Stack Developer with expertise in building scalable and efficient web
+            applications. I specialize in using .NET technologies to create powerful back-end services and Angular to develop
+            dynamic front-end experiences. My goal is to deliver high-quality applications that provide seamless user
+            experiences and solve real-world problems.
+        </p>
+        <p>
+            With a strong foundation in both front-end and back-end development, I take pride in writing clean, maintainable
+            code and staying up-to-date with the latest technologies. I am committed to continuously improving my skills and
+            delivering solutions that drive business growth.
+        </p>
+        <!-- Read Mode Button -->
+      <button id="readModeBtn" class="btn" (click)="ColapaseReadMore()" *ngIf="!flag">Read More</button>
+
+      <!-- Skills Section -->
+      <div *ngIf="flag">
+      <!-- 
+        <div class="section" id="skillsSection">
+          <h2 class="section-title">Skills</h2>
+          <ul class="skills-list">
+            <li class="skill-item">HTML</li>
+            <li class="skill-item">CSS</li>
+            <li class="skill-item">Bootstrap</li>
+            <li class="skill-item">jQuery</li>
+            <li class="skill-item">Postman API</li>
+            <li class="skill-item">Swagger API</li>
+            <li class="skill-item">MVC</li>
+            <li class="skill-item">C#</li>
+            <li class="skill-item">Angular (Web/MVC)</li>
+            <li class="skill-item">Next.js</li>
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">TypeScript</li>
+            <li class="skill-item">Microsoft SQL Server</li>
+            <li class="skill-item">Filezilla</li>
+            <li class="skill-item">AWS</li>
+            <li class="skill-item">Vercel</li>
+            <li class="skill-item">SSR/CSR/SEO Score Improvement (Show Your Site At Top of Search List)</li>
+            <li class="skill-item">Live Site Deployment</li>
+          </ul>
+        </div> -->
+      
+        <!-- Education Section -->
+        <div class="section" id="educationSection">
+          <h2 class="section-title">Education</h2>
+          <ul class="education-list">
+            <li><strong>Bachelor's</strong> from C.P Patel and F.H Shah College, Anand</li>
+            <li><strong>Master's</strong> from Charusat University, Changa</li>
+            <li><strong>Internship:</strong> 6-month internship as a Full Stack Developer at Ace Infoway</li>
+            <li><strong>Work Experience:</strong> From 2 years I'm Working as a Full Stack Developer(Angular + .Net Core Web API + MS SQL) at Ace Infoway</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button id="readModeBtn" class="btn" (click)="ColapaseReadMore()" *ngIf="flag">Read Less</button>
+
+    </div>
+</section>

@@ -1,0 +1,26 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white; /* Optional: Set text color */
+    padding: 10px 0; /* Optional: Add some padding */
+    text-align: center;
+    z-index: 10; /* Optional: Ensures the footer is above other content */
+  }
+  
+  footer a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  footer a i {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  body {
+    padding-bottom: 50px;
+  }
+  
