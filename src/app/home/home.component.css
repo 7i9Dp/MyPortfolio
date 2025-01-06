@@ -44,4 +44,7 @@
     .text-content{
         text-align: center !important;
     }
+    h2{
+        font-size: 1.9rem !important; 
+    }
 }
