@@ -754,4 +754,27 @@ footer i{
     .input-box input{
         width: 100%;
     }
+    /* .section-title {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+    } */
+    /* .project-list {
+        gap: 0px !important;
+    } */
+    .col-md-2 .d-flex {
+        padding-right: 150px !important;
+    }
+
+    .aboutImg {
+        position: absolute;
+        top: 23px !important;
+        left: -41px !important;
+        width: 366px !important;
+        height: auto;
+    }
+
+    .image-container{
+        width: 200px !important;
+        height: 200px !important;
+    }
 }

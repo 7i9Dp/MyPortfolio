@@ -1,8 +1,10 @@
-<header class="header">
-    <a href="#" class="logo">Jignesh Parmar</a>
-    <i class='bx bx-menu' id="menu" style='color:#ffffff'></i>
-    <nav class="navbar">
-        <!-- <a href="javascript:void()" routerLink="home" style="--vlr:1" class="active">Home</a>
+<div class="row align-items-center">
+        <header class="header">
+        <div class="col-md-10">
+        <a href="#" class="logo">Jignesh Parmar</a>
+    </div>
+        <nav [ngClass]="{ 'active': menuOpen }" class="navbar">
+            <!-- <a href="javascript:void()" routerLink="home" style="--vlr:1" class="active">Home</a>
         <a href="javascript:void()" routerLink="about-me" style="--vlr:2">About Me</a>
         <a href="javascript:void()" routerLink="education" style="--vlr:3">Education</a>
         <a href="javascript:void()" routerLink="skills" style="--vlr:4">Skills</a>
@@ -14,4 +16,8 @@
         <a routerLink="projects" routerLinkActive="active" style="--vlr:4">Projects</a>
         <a routerLink="contact-me" routerLinkActive="active" style="--vlr:5">Contact Me</a>
     </nav>
+    <div class="col-md-2 d-flex">
+        <i class='bx bx-menu' id="menu" style='color:#ffffff;flex: auto;font-size: xx-large;' (click)="toggleMenu()"></i>
+    </div>
 </header>
+</div>

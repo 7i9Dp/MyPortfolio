@@ -17,8 +17,31 @@
 
 .aboutImg {
     position: absolute;
-    top: 54px !important;
-    left: 34px !important;
-    width: 457px !important;
+    top: 54px ;
+    left: 34px ;
+    width: 457px ;
     height: auto;
+}
+
+@media(max-width:450px){
+    
+    .aboutImg {
+        position: absolute;
+        top: 23px !important;
+        left: -41px !important;
+        width: 366px !important;
+        height: auto;
+    }
+
+    .home .text-content h1 {
+        font-size: 3rem;
+    }
+
+    .text-animation h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content{
+        text-align: center !important;
+    }
 }
