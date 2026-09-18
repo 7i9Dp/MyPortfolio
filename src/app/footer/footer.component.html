@@ -1,6 +1,38 @@
-<footer style="padding: 10px">
-    <div class="text">
-        <p>Copyright &#64; 2024 by Jignesh Parmar</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="brand">
+        <a href="#home" class="brand-link" (click)="go($event, 'home')" [attr.aria-label]="brand.name + ' — back to top'">
+          <img [src]="brand.mark" width="186" height="126" alt="" loading="lazy">
+          <span class="brand-name">{{ brand.name }}</span>
+        </a>
+        <p class="brand-tagline">{{ brand.tagline }}</p>
+        <p class="brand-note">Web development, e-commerce, SEO &amp; growth — by {{ profile.name }}, {{ profile.role }}.</p>
+      </div>
+
+      <nav class="quick" aria-label="Footer">
+        <h3>Quick Links</h3>
+        <ul>
+          <li *ngFor="let item of navItems">
+            <a [href]="'#' + item.id" (click)="go($event, item.id)">{{ item.label }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="follow">
+        <h3>Follow Us</h3>
+        <div class="social-row">
+          <a *ngFor="let s of socials" class="icon-btn" [href]="s.url" target="_blank" rel="noopener"
+             [attr.aria-label]="s.label"><i class="bx" [ngClass]="s.icon" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
-   <a href="#"> <i class='bx bx-up-arrow-alt'></i></a>
+
+    <div class="bottom">
+      <p>Copyright &copy; {{ year }} {{ brand.name }}. All rights reserved.</p>
+      <button type="button" class="to-top" (click)="go($event, 'home')" aria-label="Back to top">
+        <i class="bx bx-up-arrow-alt" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
 </footer>

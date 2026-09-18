@@ -1,12 +1,87 @@
-.contact-card{
-    text-align: center;
+.contact {
+  border-top: 2px solid var(--teal);
+  background:
+    radial-gradient(600px circle at 90% 10%, rgba(0, 180, 166, .1), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
 }
 
-.contact-item{
-    font-size: 2rem;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
 }
 
-.contact-card:hover {
-    transform: scale(1.02);
-    box-shadow: 9px 6px 10px #0099bd;
-  }
+.contact-intro .section-title { font-size: 36px; }
+
+.lead {
+  margin-top: 16px;
+  max-width: 480px;
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+.socials { margin-top: 36px; }
+.socials > span { display: block; margin-bottom: 12px; font-size: 13px; color: var(--text-dim); }
+.social-row { display: flex; gap: 12px; }
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  height: 100%;
+  padding: 22px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 20, 25, .7);
+  transition: border-color .3s, transform .3s var(--ease), background-color .3s;
+}
+
+a.contact-item:hover {
+  border-color: var(--teal);
+  background: rgba(0, 180, 166, .06);
+  transform: translateY(-3px);
+}
+
+.ci-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-size: 22px;
+  color: var(--teal);
+  background: var(--border);
+}
+
+.ci-body { display: flex; flex-direction: column; min-width: 0; }
+.ci-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.ci-value { font-size: 14px; color: var(--text-muted); overflow-wrap: anywhere; }
+.ci-value.link { color: var(--teal); }
+a.contact-item:hover .link { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .lead { margin-left: auto; margin-right: auto; }
+  .cta, .social-row { justify-content: center; }
+  .contact-list { text-align: left; }
+}
+
+@media (max-width: 767px) {
+  .contact-intro .section-title { font-size: 28px; }
+  .lead { font-size: 15px; }
+  .cta { flex-direction: column; }
+  .cta .btn { width: 100%; }
+  .contact-list { grid-template-columns: 1fr; gap: 12px; }
+  .contact-item { padding: 16px; }
+}

@@ -1,26 +1,80 @@
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: white; /* Optional: Set text color */
-    padding: 10px 0; /* Optional: Add some padding */
-    text-align: center;
-    z-index: 10; /* Optional: Ensures the footer is above other content */
-  }
-  
-  footer a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  footer a i {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  body {
-    padding-bottom: 50px;
-  }
-  
+.footer {
+  background: var(--bg-footer);
+  border-top: 1px solid var(--border);
+  padding: 56px 0 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+}
+
+.brand-link { display: inline-flex; align-items: center; gap: 12px; }
+.brand-link img { height: 44px; width: auto; border-radius: 9px; }
+.brand-name { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.brand-tagline {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--teal);
+}
+.brand .brand-note { margin-top: 8px; max-width: 320px; font-size: 14px; color: var(--text-dim); }
+
+.footer h3 {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.quick ul { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.quick a {
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color .25s;
+}
+.quick a:hover { color: var(--teal); }
+
+.social-row { display: flex; gap: 10px; }
+.social-row .icon-btn { width: 44px; height: 44px; font-size: 20px; }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 44px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.bottom p { font-size: 13px; color: #8a8f96; }
+
+.to-top {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: var(--bg);
+  background: var(--teal);
+  transition: transform .3s var(--ease), background-color .3s;
+}
+.to-top:hover { background: var(--orange); transform: translateY(-3px); }
+
+@media (max-width: 767px) {
+  .footer { padding: 44px 0 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+  .brand .brand-note { margin-left: auto; margin-right: auto; }
+  .quick ul, .social-row { justify-content: center; }
+  .quick ul { gap: 0 16px; }
+  .quick a { padding: 12px 4px; }
+  .brand-link { padding: 4px 0; }
+  .bottom { flex-direction: column-reverse; text-align: center; }
+}

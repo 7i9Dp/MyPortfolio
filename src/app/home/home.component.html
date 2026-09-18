@@ -1,42 +1,69 @@
-<!-- *************************Home Section************************* -->
-<section class="home" id="home">
-  <div class="text-content">
-      <h1>I'm Jignesh Parmar</h1>
-      <div class="text-animation" style="white-space: nowrap">
-          <h2>Full Stack Developer(Dot Net + Angular)</h2>
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="status anim" style="--d: 0ms">
+        <span class="dot" aria-hidden="true"></span>
+        {{ brandName }} · Now accepting new client projects
+      </span>
+
+      <h1 id="hero-title" class="anim" style="--d: 100ms">
+        I Build <span class="grad">Scalable Web Solutions</span> That Drive Business Growth
+      </h1>
+
+      <p class="typed anim" style="--d: 200ms" aria-live="off">
+        <span class="typed-prefix">&gt; {{ firstName }} is a</span>
+        <span class="typed-word">{{ typedText }}</span><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <p class="subhead anim" style="--d: 280ms">
+        Full Stack Developer <span class="sep">|</span> {{ experience }} Years Experience <span class="sep">|</span> .NET • Angular • React • Node.js
+      </p>
+
+      <p class="desc anim" style="--d: 360ms">
+        I build high-performance websites, e-commerce stores and custom business software — with dashboards, reports
+        and automation that give you an accurate view of your business. From architecture to deployment, I deliver
+        clean code, scalable solutions, and seamless user experiences.
+      </p>
+
+      <div class="cta anim" style="--d: 440ms">
+        <a href="#projects" class="btn btn-primary" (click)="scrollTo($event, 'projects')">
+          View My Work <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline" (click)="scrollTo($event, 'contact')">Get In Touch</a>
       </div>
-    <p>
-        As a Full Stack Developer, I build strong and scalable applications using .NET Web API and Angular. I create RESTful
-        APIs with .NET to connect the front-end and back-end smoothly. On the front-end, I use Angular to design dynamic and
-        responsive user interfaces for modern web apps.
-    </p>
-    <p>
-        With .NET Web API, I create secure and efficient back-end services that can grow with the business. I use tools like
-        Entity Framework, MVC, and JWT for secure authentication. On the front-end, Angular helps me build fast, single-page
-        applications (SPA) that work well on any device or browser.
-    </p>
-    <div class="text-animation" style="white-space: nowrap">
-        <!-- class="text-animation" -->
-        <h2 style="font-size: 3.2rem;"> <span style="color:#0099bd;">Experience :</span> Dec 2022 To PRESENT (2 Years)</h2> 
+
+      <ul class="stats anim" style="--d: 520ms">
+        <li *ngFor="let stat of stats">
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </li>
+      </ul>
     </div>
 
-      <div class="btn-section">
-          <!-- <button class="btn">Hire me</button>
-          <button class="btn">Let's Talk</button> -->
-          <a href="tel:+918780818623">
-              <button class="btn" style="height: 50px;">Let's Talk</button>
-          </a>
-          <a href="https://wa.me/918780818623?text=Hi%20Jignesh,%20we%20have%20seen%20your%20portfolio%20and%20want%20to%20connect%20with%20you" target="_blank">
-            <button class="btn" style="height: 50px;">Let's Talk on WhatsApp</button>
-          </a>
+    <div class="hero-visual anim" style="--d: 200ms">
+      <div class="avatar avatar--logo">
+        <!-- Personal photo — hidden for now. Uncomment to show it again (with the ring) and remove the logo below.
+        <div class="ring" aria-hidden="true"></div>
+        <img [src]="photo" width="800" height="800" fetchpriority="high"
+             alt="Portrait of Jignesh Parmar, Full Stack Developer">
+        -->
+        <!-- Developer illustration placeholder — replaced by the brand logo.
+        <img [src]="heroImage" width="800" height="800" fetchpriority="high"
+             alt="Illustration of a developer workspace with a code editor on a laptop">
+        -->
+        <img [src]="brandLogo" width="720" height="720" fetchpriority="high"
+             [alt]="brandName + ' logo — ' + brandTagline">
       </div>
-      <div class="social-media">
-  <!-- <i class='bx bxl-twitter' style="--vlr:7"></i>
-  <i class='bx bxl-facebook' style="--vlr:8"></i>
-  <i class='bx bxl-youtube' style="--vlr:9"></i> -->
-      </div>
+      <div class="chip chip-a" aria-hidden="true"><i class="bx bx-code-block"></i> .NET Core</div>
+      <div class="chip chip-b" aria-hidden="true"><i class="bx bxl-angular"></i> Angular</div>
+      <div class="chip chip-c" aria-hidden="true"><i class="bx bxl-react"></i> React</div>
+    </div>
   </div>
-  <div class="image-container">
-      <img src="assets/Jignesh.png" alt="Jignesh" class="aboutImg">
-  </div>
+
+  <a href="#skills" class="scroll-hint" (click)="scrollTo($event, 'skills')" aria-label="Scroll to Skills section">
+    <span></span>
+  </a>
 </section>

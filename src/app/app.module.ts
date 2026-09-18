@@ -7,9 +7,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ServicesComponent } from './services/services.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
-import { EducationDetailsComponent } from './education-details/education-details.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { RevealDirective } from './shared/reveal.directive';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,11 @@ import { ProjectsComponent } from './projects/projects.component';
     HomeComponent,
     FooterComponent,
     AboutMeComponent,
-    EducationDetailsComponent,
     SkillsComponent,
+    ServicesComponent,
     ContactMeComponent,
-    EducationDetailsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    RevealDirective
   ],
   imports: [
     BrowserModule,

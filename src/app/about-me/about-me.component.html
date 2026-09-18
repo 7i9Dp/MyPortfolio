@@ -1,69 +1,67 @@
-<!-- *************************About Section************************* -->
-<section class="about start-animation" id="about"> 
-    <!-- start-animation -->
-     <!-- this will start animation -->
-    <h2 class="title">About <span>Me</span></h2>
-    <!-- <img src="assets/Jignesh.png" alt="" class="aboutImg"> -->
-    <div class="image-container">
-        <img src="assets/Jignesh.png" alt="Jignesh" class="aboutImg">
-    </div>
-    
-    <div class="text-content2">
-        <h2>Full Stack Developer(Dot Net + Angular)</h2>
-        <p>
-            Hi, I'm Jignesh Parmar, a passionate Full Stack Developer with expertise in building scalable and efficient web
-            applications. I specialize in using .NET technologies to create powerful back-end services and Angular to develop
-            dynamic front-end experiences. My goal is to deliver high-quality applications that provide seamless user
-            experiences and solve real-world problems.
-        </p>
-        <p>
-            With a strong foundation in both front-end and back-end development, I take pride in writing clean, maintainable
-            code and staying up-to-date with the latest technologies. I am committed to continuously improving my skills and
-            delivering solutions that drive business growth.
-        </p>
-        <!-- Read Mode Button -->
-      <button id="readModeBtn" class="btn" (click)="ColapaseReadMore()" *ngIf="!flag">Read More</button>
-
-      <!-- Skills Section -->
-      <div *ngIf="flag">
-      <!-- 
-        <div class="section" id="skillsSection">
-          <h2 class="section-title">Skills</h2>
-          <ul class="skills-list">
-            <li class="skill-item">HTML</li>
-            <li class="skill-item">CSS</li>
-            <li class="skill-item">Bootstrap</li>
-            <li class="skill-item">jQuery</li>
-            <li class="skill-item">Postman API</li>
-            <li class="skill-item">Swagger API</li>
-            <li class="skill-item">MVC</li>
-            <li class="skill-item">C#</li>
-            <li class="skill-item">Angular (Web/MVC)</li>
-            <li class="skill-item">Next.js</li>
-            <li class="skill-item">JavaScript</li>
-            <li class="skill-item">TypeScript</li>
-            <li class="skill-item">Microsoft SQL Server</li>
-            <li class="skill-item">Filezilla</li>
-            <li class="skill-item">AWS</li>
-            <li class="skill-item">Vercel</li>
-            <li class="skill-item">SSR/CSR/SEO Score Improvement (Show Your Site At Top of Search List)</li>
-            <li class="skill-item">Live Site Deployment</li>
-          </ul>
-        </div> -->
-      
-        <!-- Education Section -->
-        <div class="section" id="educationSection">
-          <h2 class="section-title">Education</h2>
-          <ul class="education-list">
-            <li><strong>Bachelor's</strong> from C.P Patel and F.H Shah College, Anand</li>
-            <li><strong>Master's</strong> from Charusat University, Changa</li>
-            <li><strong>Internship:</strong> 6-month internship as a Full Stack Developer at Ace Infoway</li>
-            <li><strong>Work Experience:</strong> From 2 years I'm Working as a Full Stack Developer(Angular + .Net Core Web API + MS SQL) at Ace Infoway</li>
-          </ul>
+<section class="section section--alt about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo" appReveal>
+        <div class="photo-frame">
+          <!-- Personal photo — hidden for now.
+          <img [src]="photo" width="800" height="800" loading="lazy" alt="Jignesh Parmar smiling, wearing a blue checked shirt">
+          -->
+          <img [src]="heroImage" width="800" height="800" loading="lazy" alt="Illustration of a developer workspace">
+        </div>
+        <div class="exp-badge">
+          <strong>{{ experience }}</strong>
+          <span>Years building<br>production apps</span>
         </div>
       </div>
-      
-      <button id="readModeBtn" class="btn" (click)="ColapaseReadMore()" *ngIf="flag">Read Less</button>
 
+      <div class="about-text">
+        <span class="eyebrow" appReveal>// Who I am</span>
+        <h2 id="about-title" class="section-title" appReveal>About <span class="accent">Me</span></h2>
+        <p class="role" appReveal [revealDelay]="60">{{ role }}</p>
+
+        <p appReveal [revealDelay]="120">
+          I'm a passionate Full Stack Developer with expertise in building scalable and efficient web applications.
+          I specialize in using .NET technologies to create powerful back-end services and Angular to develop dynamic
+          front-end experiences. My goal is to deliver high-quality applications that provide seamless user experiences
+          and solve real-world problems.
+        </p>
+        <p appReveal [revealDelay]="180">
+          With a strong foundation in both front-end and back-end development, I take pride in writing clean,
+          maintainable code and staying up-to-date with the latest technologies. I am committed to continuously
+          improving my skills and delivering solutions that drive business growth.
+        </p>
+
+        <ul class="highlights" appReveal [revealDelay]="240">
+          <li><i class="bx bx-check-circle" aria-hidden="true"></i> Live enterprise products</li>
+          <li><i class="bx bx-check-circle" aria-hidden="true"></i> Clean, maintainable code</li>
+          <li><i class="bx bx-check-circle" aria-hidden="true"></i> API &amp; third-party integrations</li>
+          <li><i class="bx bx-check-circle" aria-hidden="true"></i> SEO-ready, fast websites</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="journey">
+      <div class="journey-col">
+        <h3 class="journey-title" appReveal><i class="bx bx-briefcase" aria-hidden="true"></i> Experience</h3>
+        <ol class="timeline">
+          <li *ngFor="let item of timeline; let i = index" appReveal [revealDelay]="i * 90">
+            <span class="period">{{ item.period }}</span>
+            <h4>{{ item.role }} <span class="org">· {{ item.org }}</span></h4>
+            <p>{{ item.text }}</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="journey-col">
+        <h3 class="journey-title" appReveal><i class="bx bxs-graduation" aria-hidden="true"></i> Education</h3>
+        <ol class="timeline">
+          <li *ngFor="let item of education; let i = index" appReveal [revealDelay]="i * 90">
+            <span class="period">{{ item.period }}</span>
+            <h4>{{ item.role }}</h4>
+            <p>{{ item.org }}</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
 </section>

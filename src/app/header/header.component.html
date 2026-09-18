@@ -1,24 +1,29 @@
-<header class="header">
-    <div class="row align-items-center">
-        <div class="col-md-10">
-            <a href="#" class="logo">Jignesh Parmar</a>
-        </div>
-        <nav [ngClass]="{ 'active': menuOpen }" class="navbar">
-            <!-- <a href="javascript:void()" routerLink="home" style="--vlr:1" class="active">Home</a>
-        <a href="javascript:void()" routerLink="about-me" style="--vlr:2">About Me</a>
-        <a href="javascript:void()" routerLink="education" style="--vlr:3">Education</a>
-        <a href="javascript:void()" routerLink="skills" style="--vlr:4">Skills</a>
-        <a href="javascript:void()" routerLink="contact-me" style="--vlr:5">Contact Me</a> -->
-            <a routerLink="home" routerLinkActive="active" style="--vlr:1">Home</a>
-            <a routerLink="about-me" routerLinkActive="active" style="--vlr:2">About Me</a>
-            <!-- <a routerLink="education" routerLinkActive="active" style="--vlr:3">Education</a> -->
-            <a routerLink="skills" routerLinkActive="active" style="--vlr:4">Skills</a>
-            <a routerLink="projects" routerLinkActive="active" style="--vlr:4">Projects</a>
-            <a routerLink="contact-me" routerLinkActive="active" style="--vlr:5">Contact Me</a>
-        </nav>
-        <div class="col-md-2 d-flex">
-            <i class='bx bx-menu' id="menu" style='color:#ffffff;flex: auto;font-size: xx-large;'
-                (click)="toggleMenu()"></i>
-        </div>
-    </div>
+<header class="nav" [class.scrolled]="scrolled">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" (click)="go($event, 'home')" [attr.aria-label]="brand.name + ' — back to top'">
+      <img class="logo-mark" [src]="brand.mark" width="186" height="126" alt="">
+      <span class="logo-text">
+        <span class="wordmark"><span class="w-growth">growth</span><span class="w-forge">forge</span><span class="w-dev">dev</span></span>
+        <span class="logo-sub">by {{ founder }}</span>
+      </span>
+    </a>
+
+    <nav id="primary-nav" class="links" [class.open]="menuOpen" aria-label="Primary">
+      <a *ngFor="let item of navItems"
+         [href]="'#' + item.id"
+         [class.active]="activeId === item.id"
+         [attr.aria-current]="activeId === item.id ? 'true' : null"
+         (click)="go($event, item.id)">{{ item.label }}</a>
+      <a href="#contact" class="btn btn-primary btn-sm mobile-cta" (click)="go($event, 'contact')">Let's Connect</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary btn-sm desktop-cta" (click)="go($event, 'contact')">Let's Connect</a>
+
+    <button class="burger" type="button" [class.open]="menuOpen" (click)="toggleMenu()"
+            [attr.aria-expanded]="menuOpen" aria-controls="primary-nav"
+            [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="backdrop" *ngIf="menuOpen" (click)="closeMenu()"></div>
 </header>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-labelledby="t">
+  <title id="t">Developer workspace illustration: code editor on a laptop</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#1a2b3a"/>
+      <stop offset="1" stop-color="#0f1419"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16202c"/>
+      <stop offset="1" stop-color="#101820"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3646"/>
+      <stop offset="1" stop-color="#1b2430"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00b4a6"/>
+      <stop offset="1" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- grid dots -->
+  <g fill="#ffffff" opacity=".05">
+    <circle cx="120" cy="140" r="3"/><circle cx="180" cy="140" r="3"/><circle cx="240" cy="140" r="3"/>
+    <circle cx="560" cy="660" r="3"/><circle cx="620" cy="660" r="3"/><circle cx="680" cy="660" r="3"/>
+    <circle cx="120" cy="200" r="3"/><circle cx="180" cy="200" r="3"/><circle cx="620" cy="600" r="3"/><circle cx="680" cy="600" r="3"/>
+  </g>
+
+  <!-- floating braces -->
+  <text x="118" y="330" font-family="Consolas, Monaco, monospace" font-size="64" font-weight="700" fill="#00b4a6" opacity=".35">{ }</text>
+  <text x="600" y="210" font-family="Consolas, Monaco, monospace" font-size="52" font-weight="700" fill="#ff8c42" opacity=".35">;</text>
+
+  <!-- laptop screen -->
+  <rect x="170" y="215" width="460" height="300" rx="18" fill="#2a3646"/>
+  <rect x="184" y="229" width="432" height="272" rx="10" fill="url(#screen)"/>
+
+  <!-- editor title bar -->
+  <rect x="184" y="229" width="432" height="34" rx="10" fill="#1f2937"/>
+  <rect x="184" y="250" width="432" height="13" fill="#1f2937"/>
+  <circle cx="206" cy="246" r="6" fill="#ff5f57"/>
+  <circle cx="226" cy="246" r="6" fill="#febc2e"/>
+  <circle cx="246" cy="246" r="6" fill="#28c840"/>
+  <rect x="330" y="240" width="140" height="12" rx="6" fill="#2d3a4b"/>
+
+  <!-- line numbers -->
+  <g fill="#3b4a5c">
+    <rect x="200" y="285" width="12" height="8" rx="3"/>
+    <rect x="200" y="310" width="12" height="8" rx="3"/>
+    <rect x="200" y="335" width="12" height="8" rx="3"/>
+    <rect x="200" y="360" width="12" height="8" rx="3"/>
+    <rect x="200" y="385" width="12" height="8" rx="3"/>
+    <rect x="200" y="410" width="12" height="8" rx="3"/>
+    <rect x="200" y="435" width="12" height="8" rx="3"/>
+    <rect x="200" y="460" width="12" height="8" rx="3"/>
+  </g>
+
+  <!-- code lines -->
+  <rect x="230" y="283" width="70" height="12" rx="6" fill="#ff8c42"/>
+  <rect x="308" y="283" width="120" height="12" rx="6" fill="#00b4a6"/>
+  <rect x="436" y="283" width="40" height="12" rx="6" fill="#b0b8c1" opacity=".5"/>
+
+  <rect x="254" y="308" width="90" height="12" rx="6" fill="#3a8dde"/>
+  <rect x="352" y="308" width="150" height="12" rx="6" fill="#b0b8c1" opacity=".35"/>
+
+  <rect x="254" y="333" width="60" height="12" rx="6" fill="#c792ea"/>
+  <rect x="322" y="333" width="110" height="12" rx="6" fill="#00d084"/>
+
+  <rect x="278" y="358" width="130" height="12" rx="6" fill="#b0b8c1" opacity=".35"/>
+  <rect x="416" y="358" width="70" height="12" rx="6" fill="#ff8c42" opacity=".85"/>
+
+  <rect x="278" y="383" width="80" height="12" rx="6" fill="#00b4a6"/>
+  <rect x="366" y="383" width="160" height="12" rx="6" fill="#b0b8c1" opacity=".35"/>
+
+  <rect x="254" y="408" width="40" height="12" rx="6" fill="#c792ea"/>
+
+  <rect x="230" y="433" width="50" height="12" rx="6" fill="#3a8dde"/>
+  <rect x="288" y="433" width="100" height="12" rx="6" fill="#b0b8c1" opacity=".35"/>
+
+  <rect x="230" y="458" width="24" height="12" rx="6" fill="#ff8c42"/>
+  <rect x="262" y="456" width="3" height="16" fill="#ffffff">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- laptop base -->
+  <path d="M120 528 H680 L650 560 H150 Z" fill="url(#base)"/>
+  <rect x="350" y="528" width="100" height="8" rx="4" fill="#0f1419" opacity=".6"/>
+
+  <!-- code badge -->
+  <circle cx="590" cy="540" r="62" fill="url(#accent)"/>
+  <circle cx="590" cy="540" r="62" fill="none" stroke="#0f1419" stroke-width="6"/>
+  <text x="590" y="560" text-anchor="middle" font-family="Consolas, Monaco, monospace" font-size="50" font-weight="700" fill="#ffffff">&lt;/&gt;</text>
+
+  <!-- small status card -->
+  <rect x="140" y="590" width="200" height="64" rx="14" fill="#1a2332" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="172" cy="622" r="10" fill="#00d084"/>
+  <path d="M167 622 l4 4 l7 -8" stroke="#0f1419" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="194" y="610" width="110" height="10" rx="5" fill="#b0b8c1" opacity=".6"/>
+  <rect x="194" y="628" width="70" height="8" rx="4" fill="#00b4a6" opacity=".7"/>
+</svg>

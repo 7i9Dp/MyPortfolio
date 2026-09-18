@@ -1,81 +1,25 @@
-<!-- *************************Skills Section************************* -->
-<section class="skills start-animation" id="skills">
-    <h2 class="title">My <span>Skills</span></h2>
-  
-    <!-- Skills Section -->
-    <div>
-        <div class="section" id="skillsSection">
-            <!-- Technical Skills -->
-            <div class="skill-category">
-                <h3 class="category-title">Technical Skills</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">MVC</li>
-                    <li class="skill-item">C#</li>
-                    <li class="skill-item">JavaScript</li>
-                    <li class="skill-item">TypeScript</li>
-                    <li class="skill-item">Microsoft SQL Server</li>
-                </ul>
-            </div>
-  
-            <!-- Soft Skills -->
-            <div class="skill-category">
-                <h3 class="category-title">Soft Skills</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">Communication</li>
-                    <li class="skill-item">Teamwork</li>
-                    <li class="skill-item">Problem-solving</li>
-                    <li class="skill-item">Adaptability</li>
-                    <!-- <li class="skill-item">Critical Thinking</li> -->
-                </ul>
-            </div>
-  
-            <!-- Tools and Technologies -->
-            <div class="skill-category">
-                <h3 class="category-title">Tools and Technologies</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">Postman API</li>
-                    <li class="skill-item">Swagger API</li>
-                    <li class="skill-item">Filezilla</li>
-                    <li class="skill-item">Tourtoise GIT</li>
-                    <li class="skill-item">Vercel</li>
-                    <li class="skill-item">Gitlab/Gitub/Bit Bucket</li>
-                    <li class="skill-item">AWS</li>
-                    <li class="skill-item">Jenkins</li>
-                    <li class="skill-item">Vercel</li>
-                    <li class="skill-item">WebSockets</li>
-                </ul>
-            </div>
-  
-            <!-- Frameworks -->
-            <div class="skill-category">
-                <h3 class="category-title">Frameworks</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">Bootstrap</li>
-                    <li class="skill-item">jQuery</li>
-                    <li class="skill-item">Angular(14,16,17,19) (Web/MVC)</li>
-                    <li class="skill-item">Next.js</li>
-                </ul>
-            </div>
-  
-            <!-- Languages -->
-            <div class="skill-category">
-                <h3 class="category-title">Languages</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">HTML</li>
-                    <li class="skill-item">CSS</li>
-                    <li class="skill-item">JavaScript</li>
-                    <li class="skill-item">TypeScript</li>
-                </ul>
-            </div>
-  
-            <!-- Other Skills -->
-            <div class="skill-category">
-                <h3 class="category-title">Other Skills</h3>
-                <ul class="skills-list">
-                    <li class="skill-item">SSR/CSR/SEO Score Improvement (Show Your Site At Top of Search List)</li>
-                    <li class="skill-item">Live Site Deployment</li>
-                </ul>
-            </div>
+<section class="section skills" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <span class="eyebrow">// What I work with</span>
+      <h2 id="skills-title" class="section-title">My Skills &amp; <span class="accent">Expertise</span></h2>
+      <p class="section-sub">Technologies I use to design, build and ship production software</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="skill-grid">
+      <article *ngFor="let group of groups; let i = index" class="skill-card"
+               [attr.data-accent]="group.accent" appReveal [revealDelay]="i * 80">
+        <div class="card-head">
+          <span class="card-icon"><i class="bx" [ngClass]="group.icon" aria-hidden="true"></i></span>
+          <h3>{{ group.title }}</h3>
         </div>
+        <ul>
+          <li *ngFor="let skill of group.items">
+            <i class="bx bx-check" aria-hidden="true"></i>{{ skill }}
+          </li>
+        </ul>
+      </article>
     </div>
+  </div>
 </section>

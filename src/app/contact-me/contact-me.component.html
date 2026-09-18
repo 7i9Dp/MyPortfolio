@@ -1,42 +1,68 @@
-<!-- *************************Contact Section************************* -->
-<!-- <section class="contact start-animation" id="contact">
-    <h2 class="title">Contact <span>Me</span></h2>
-<form action="#" id="">
-      <div class="input-box">
-            <input type="text" required placeholder="Full Name">
-            <input type="email" required placeholder="Email">
-      </div>
-      <div class="input-box">
-            <input type="tel" required placeholder="Mobile Number">
-            <input type="email" required placeholder="Subject For">
-      </div>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
-      <input type="submit" value="Send Message" class="btn">
-</form>
-</section> -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div class="contact-intro" appReveal>
+      <span class="eyebrow">// Let's talk</span>
+      <h2 id="contact-title" class="section-title">Let's Work <span class="accent">Together</span></h2>
+      <p class="lead">
+        I'm always open to discussing new projects and opportunities. Have an idea, a product to scale,
+        or a role to fill? Send a message and I'll get back to you within 24 hours.
+      </p>
 
-
-<!-- *************************Contact Section************************* -->
-<section class="contact start-animation" id="contact">
-      <h2 class="title">Contact <span>Me</span></h2>
-    
-      <!-- Contact Details -->
-      <div class="contact-card">
-          <div class="contact-item">
-              <h3>Email</h3>
-              <a href="mailto:jignesh.parmar.201098@gmail.com" class="contact-link">
-                  jignesh.parmar.201098&#64;gmail.com
-              </a>
-          </div>
-          <div class="contact-item">
-              <h3>Phone</h3>
-              <a href="tel:+918780818623" class="contact-link">
-                  +91 8780818623
-              </a>
-          </div>
-          <div class="contact-item">
-              <h3>Address</h3>
-              <p>Piplata, Mitral Road Gokad Pura,Nadiad</p>
-          </div>
+      <div class="cta">
+        <a class="btn btn-primary" [href]="mailto">
+          <i class="bx bx-envelope" aria-hidden="true"></i> Send Me an Email
+        </a>
+        <a class="btn btn-outline" [href]="profile.whatsapp" target="_blank" rel="noopener">
+          <i class="bx bxl-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
       </div>
-  </section>
+
+      <div class="socials" *ngIf="socials.length">
+        <span>Find me on</span>
+        <div class="social-row">
+          <a *ngFor="let s of socials" class="icon-btn" [href]="s.url" target="_blank" rel="noopener"
+             [attr.aria-label]="s.label"><i class="bx" [ngClass]="s.icon" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <ul class="contact-list">
+      <li appReveal [revealDelay]="80">
+        <a class="contact-item" [href]="'mailto:' + profile.email">
+          <span class="ci-icon"><i class="bx bx-envelope" aria-hidden="true"></i></span>
+          <span class="ci-body">
+            <span class="ci-label">Email</span>
+            <span class="ci-value link">{{ profile.email }}</span>
+          </span>
+        </a>
+      </li>
+      <li appReveal [revealDelay]="160">
+        <a class="contact-item" [href]="profile.phoneHref">
+          <span class="ci-icon"><i class="bx bx-phone" aria-hidden="true"></i></span>
+          <span class="ci-body">
+            <span class="ci-label">Phone</span>
+            <span class="ci-value link">{{ profile.phone }}</span>
+          </span>
+        </a>
+      </li>
+      <li appReveal [revealDelay]="240">
+        <div class="contact-item static">
+          <span class="ci-icon"><i class="bx bx-map" aria-hidden="true"></i></span>
+          <span class="ci-body">
+            <span class="ci-label">Location</span>
+            <span class="ci-value">{{ profile.location }}</span>
+          </span>
+        </div>
+      </li>
+      <li appReveal [revealDelay]="320">
+        <div class="contact-item static">
+          <span class="ci-icon"><i class="bx bx-time-five" aria-hidden="true"></i></span>
+          <span class="ci-body">
+            <span class="ci-label">Availability</span>
+            <span class="ci-value">Taking new client projects · Remote or on-site</span>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

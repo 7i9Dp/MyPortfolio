@@ -1,0 +1,45 @@
+<section class="section section--alt services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <span class="eyebrow">// How I can help</span>
+      <h2 id="services-title" class="section-title">Services That <span class="accent">Grow</span> Your Business</h2>
+      <p class="section-sub">From websites and business software to dashboards, page-one rankings and paid campaigns — end-to-end digital growth</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="service-grid">
+      <article *ngFor="let service of services; let i = index" class="service-card" appReveal [revealDelay]="(i % 3) * 100">
+        <span class="service-icon"><i class="bx" [ngClass]="service.icon" aria-hidden="true"></i></span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.summary }}</p>
+        <ul>
+          <li *ngFor="let item of service.capabilities">{{ item }}</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="trust">
+      <h3 class="trust-title" appReveal>Why Clients Choose <span class="accent">{{ brandName }}</span></h3>
+      <div class="trust-grid">
+        <div class="trust-item" *ngFor="let point of trustPoints; let i = index" appReveal [revealDelay]="(i % 3) * 80">
+          <span class="trust-icon"><i class="bx" [ngClass]="point.icon" aria-hidden="true"></i></span>
+          <div>
+            <h4>{{ point.title }}</h4>
+            <p>{{ point.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process" appReveal>
+      <h3 class="process-title">My Process</h3>
+      <ol>
+        <li *ngFor="let step of process; let i = index">
+          <span class="step-no">0{{ i + 1 }}</span>
+          <h4>{{ step.title }}</h4>
+          <p>{{ step.text }}</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>

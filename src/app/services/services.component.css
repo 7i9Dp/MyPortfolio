@@ -1,0 +1,176 @@
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.service-card {
+  position: relative;
+  padding: 32px 28px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  overflow: hidden;
+  transition: opacity .7s var(--ease), transform .5s var(--ease), border-color .3s, box-shadow .3s;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+
+.service-card.is-visible:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 180, 166, .5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .35);
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  font-size: 28px;
+  color: var(--orange);
+  background: rgba(255, 140, 66, .1);
+}
+
+.service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.service-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
+
+.service-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.service-card li {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--border);
+}
+
+/* Why clients choose */
+.trust { margin-top: 72px; }
+
+.trust-title {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.trust-title .accent { color: var(--teal); }
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 20, 25, .6);
+  transition: opacity .7s var(--ease), transform .5s var(--ease), border-color .3s;
+}
+.trust-item:hover { border-color: rgba(0, 208, 132, .45); }
+
+.trust-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 24px;
+  color: var(--success);
+  background: rgba(0, 208, 132, .1);
+}
+
+.trust-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.trust-item p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+/* Process */
+.process {
+  margin-top: 64px;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 20, 25, .6);
+}
+
+.process-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.process ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  counter-reset: none;
+}
+
+.process li { position: relative; }
+
+.process li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 64px;
+  right: -12px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+.step-no {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--teal);
+}
+
+.process h4 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.process p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .process li::after { display: none; }
+}
+
+@media (max-width: 767px) {
+  .service-grid { grid-template-columns: 1fr; gap: 16px; }
+  .service-card { padding: 24px 20px; }
+  .trust { margin-top: 48px; }
+  .trust-title { font-size: 22px; margin-bottom: 24px; }
+  .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+  .trust-item { padding: 18px 16px; }
+  .process { margin-top: 40px; padding: 28px 20px; }
+  .process ol { grid-template-columns: 1fr; gap: 20px; }
+  .process li { display: grid; grid-template-columns: 46px 1fr; column-gap: 16px; }
+  .step-no { grid-row: span 2; margin-bottom: 0; }
+}

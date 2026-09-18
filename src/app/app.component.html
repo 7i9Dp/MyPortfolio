@@ -1,6 +1,13 @@
+<a class="skip-link" href="#main">Skip to content</a>
 <app-header></app-header>
-<div style="padding-bottom: 70px;">
-    <router-outlet></router-outlet>
-</div>
-<!-- <app-home></app-home> -->
+<main id="main">
+  <app-home></app-home>
+  <!-- Personal About / Experience / Education section — hidden for now.
+       To show it again: uncomment the line below and the 'about' entry in NAV_ITEMS (data/portfolio.data.ts). -->
+  <!-- <app-about-me></app-about-me> -->
+  <app-skills></app-skills>
+  <app-services></app-services>
+  <app-projects></app-projects>
+  <app-contact-me></app-contact-me>
+</main>
 <app-footer></app-footer>
